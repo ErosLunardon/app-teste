@@ -1,0 +1,25 @@
+{
+  // Ativa ESLint no VS Code
+  "eslint.enable": true,
+
+  // Usa ESLint como formatador padrão
+  "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+
+  // Formata ao salvar
+  "editor.formatOnSave": true,
+
+  // Só formata arquivos suportados por ESLint
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "always"
+  },
+  "eslint.useFlatConfig": true,
+
+  // (opcional) se quiser deixar Prettier como fallback para arquivos não lintáveis
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[markdown]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "files.autoSave": "afterDelay"
+}

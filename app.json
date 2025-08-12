@@ -2,6 +2,9 @@
   "expo": {
     "name": "app-teste",
     "slug": "app-teste",
-    "version": "1.0.0"
+    "version": "1.0.0",
+    "web": {
+      "bundler": "metro"
+    }
   }
 }
