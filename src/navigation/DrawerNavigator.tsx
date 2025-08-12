@@ -4,9 +4,8 @@ import {
 } from "@react-navigation/drawer";
 import React from "react";
 
-import { Home } from "@/screens/Home";
-import { Settings } from "@/screens/Settings";
-
+import { Home } from "../screens/Home";
+import { Settings } from "../screens/Settings";
 import { Routes } from "./routes";
 
 //aqui são exportadas as propriedades de cada rota disponivel na aplicação

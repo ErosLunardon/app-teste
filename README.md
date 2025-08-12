@@ -174,23 +174,19 @@ import { MenuButton } from "@/components/buttons/MenuButton";
 
 - Configurar usuário apenas neste repositório:
 ```bash
-git config user.name "ErosLunardon"
-git config user.email "eros.lunardon@bikefacil.com"
+git config user.name "seu-nome"
+git config user.email "seu-email@exemplo.com"
 ```
 
 - Ajustar remote para SSH:
 ```bash
 git remote remove origin
-git remote add origin git@github.com:ErosLunardon/app-teste.git
+git remote add origin git@github.com:seu-usuario/seu-repositorio.git
 git push -u origin main
 ```
 
 - Gerar chave SSH (caso necessário) e adicionar no GitHub:
 ```bash
-ssh-keygen -t ed25519 -C "eros.lunardon@bikefacil.com"
+ssh-keygen -t ed25519 -C "seu-email@exemplo.com"
 # depois adicione o conteúdo de ~/.ssh/id_ed25519.pub em GitHub → Settings → SSH and GPG keys
 ```
-
----
-
-Sinta-se à vontade para ajustar este README conforme o projeto
