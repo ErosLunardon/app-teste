@@ -1,11 +1,11 @@
 import React from "react";
-import { StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-native";
+import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { useColorScheme } from "../lib/useColorScheme";
 import { RoutesProps } from "../navigation/DrawerNavigator";
 import { Header } from "../components/header/Header";
 
-export const Cadastro: React.FC<RoutesProps<"cadastro">> = () => {
+export const Historico: React.FC<RoutesProps<"historico">> = () => {
   const { colorScheme } = useColorScheme();
   const isDark = colorScheme === 'dark';
 
@@ -14,28 +14,21 @@ export const Cadastro: React.FC<RoutesProps<"cadastro">> = () => {
       <Header />
 
       <View style={styles.content}>
-        <Text style={[styles.title, isDark && styles.titleDark]}>CADASTRO</Text>
+        <Text style={[styles.title, isDark && styles.titleDark]}>HISTÓRICO</Text>
         <Text style={[styles.subtitle, isDark && styles.subtitleDark]}>
-          Dados necessários para efetuar o pagamento via{'\n'}
-          Cartão de Crédito
+          Veja seu histórico de uso
         </Text>
 
-        <View style={styles.form}>
-          <TextInput 
-            style={[styles.input, isDark && styles.inputDark]} 
-            placeholder="Nome do titular do cartão de crédito"
-            placeholderTextColor={isDark ? "#999" : "#666"}
-          />
-          <TextInput 
-            style={[styles.input, isDark && styles.inputDark]} 
-            placeholder="CPF"
-            placeholderTextColor={isDark ? "#999" : "#666"}
-          />
+        <View style={styles.messageContainer}>
+          <TouchableOpacity 
+            style={[styles.messageButton, isDark && styles.messageButtonDark]}
+            disabled
+          >
+            <Text style={[styles.messageText, isDark && styles.messageTextDark]}>
+              NÃO POSSUI NENHUM REGISTRO
+            </Text>
+          </TouchableOpacity>
         </View>
-
-        <TouchableOpacity style={styles.button}>
-          <Text style={styles.buttonText}>AVANÇAR</Text>
-        </TouchableOpacity>
       </View>
     </SafeAreaView>
   );
@@ -74,31 +67,29 @@ const styles = StyleSheet.create({
   subtitleDark: {
     color: '#ccc',
   },
-  form: {
-    marginBottom: 40,
+  messageContainer: {
+    flex: 1,
+    justifyContent: 'flex-start',
+    paddingTop: 20,
   },
-  input: {
-    borderBottomWidth: 1,
-    borderBottomColor: '#ddd',
-    paddingVertical: 15,
-    fontSize: 16,
-    marginBottom: 25,
-    color: '#333',
-  },
-  inputDark: {
-    borderBottomColor: '#555',
-    color: '#fff',
-  },
-  button: {
+  messageButton: {
     backgroundColor: '#1e4b8f',
     paddingVertical: 15,
+    paddingHorizontal: 20,
     borderRadius: 5,
     alignItems: 'center',
-    marginBottom: 40,
+    marginBottom: 20,
   },
-  buttonText: {
+  messageButtonDark: {
+    backgroundColor: '#1e4b8f',
+  },
+  messageText: {
     color: '#fff',
-    fontSize: 16,
+    fontSize: 14,
     fontWeight: 'bold',
+    textAlign: 'center',
+  },
+  messageTextDark: {
+    color: '#fff',
   },
 });

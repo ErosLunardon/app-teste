@@ -5,7 +5,7 @@ import { useColorScheme } from "../lib/useColorScheme";
 import { RoutesProps } from "../navigation/DrawerNavigator";
 import { Header } from "../components/header/Header";
 
-export const Cadastro: React.FC<RoutesProps<"cadastro">> = () => {
+export const Support: React.FC<RoutesProps<"support">> = () => {
   const { colorScheme } = useColorScheme();
   const isDark = colorScheme === 'dark';
 
@@ -14,27 +14,26 @@ export const Cadastro: React.FC<RoutesProps<"cadastro">> = () => {
       <Header />
 
       <View style={styles.content}>
-        <Text style={[styles.title, isDark && styles.titleDark]}>CADASTRO</Text>
+        <Text style={[styles.title, isDark && styles.titleDark]}>SUPORTE VIA WHATSAPP</Text>
         <Text style={[styles.subtitle, isDark && styles.subtitleDark]}>
-          Dados necessários para efetuar o pagamento via{'\n'}
-          Cartão de Crédito
+          Qualquer problema ou dúvida entre em contato{'\n'}
+          conosco via WhatsApp
         </Text>
 
         <View style={styles.form}>
+          <Text style={[styles.fieldLabel, isDark && styles.fieldLabelDark]}>MENSAGEM</Text>
           <TextInput 
-            style={[styles.input, isDark && styles.inputDark]} 
-            placeholder="Nome do titular do cartão de crédito"
+            style={[styles.textArea, isDark && styles.inputDark]} 
+            placeholder=""
             placeholderTextColor={isDark ? "#999" : "#666"}
-          />
-          <TextInput 
-            style={[styles.input, isDark && styles.inputDark]} 
-            placeholder="CPF"
-            placeholderTextColor={isDark ? "#999" : "#666"}
+            multiline
+            numberOfLines={6}
+            textAlignVertical="top"
           />
         </View>
 
         <TouchableOpacity style={styles.button}>
-          <Text style={styles.buttonText}>AVANÇAR</Text>
+          <Text style={styles.buttonText}>ENVIAR</Text>
         </TouchableOpacity>
       </View>
     </SafeAreaView>
@@ -77,6 +76,16 @@ const styles = StyleSheet.create({
   form: {
     marginBottom: 40,
   },
+  fieldLabel: {
+    fontSize: 12,
+    fontWeight: 'bold',
+    color: '#333',
+    marginBottom: 10,
+    letterSpacing: 0.5,
+  },
+  fieldLabelDark: {
+    color: '#fff',
+  },
   input: {
     borderBottomWidth: 1,
     borderBottomColor: '#ddd',
@@ -85,8 +94,20 @@ const styles = StyleSheet.create({
     marginBottom: 25,
     color: '#333',
   },
+  textArea: {
+    borderWidth: 1,
+    borderColor: '#ddd',
+    paddingVertical: 15,
+    paddingHorizontal: 15,
+    fontSize: 16,
+    marginBottom: 25,
+    color: '#333',
+    minHeight: 120,
+    borderRadius: 4,
+  },
   inputDark: {
     borderBottomColor: '#555',
+    borderColor: '#555',
     color: '#fff',
   },
   button: {
