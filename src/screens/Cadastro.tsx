@@ -1,16 +1,18 @@
-import React from "react";
-import { StyleSheet, Text } from "react-native";
+import "react"
+import { StyleSheet, Text, TextInput } from "react-native";
 
 import { SafeAreaView } from 'react-native-safe-area-context'
 
 import { MenuButton } from "../components/buttons/MenuButton";
 import { RoutesProps } from "../navigation/DrawerNavigator";
 
-export const Home: React.FC<RoutesProps<"home">> = () => {
+export const Cadastro: React.FC<RoutesProps<"cadastro">> = () => {
   return (
     <SafeAreaView style={styles.container}>
       <MenuButton />
-      <Text style={styles.text}>Home Screen</Text>
+      <Text style={styles.text}>Cadastro Screen</Text>
+      <TextInput style={styles.input} placeholder="Nome" />
+      <TextInput style={styles.input} placeholder="Email" />
     </SafeAreaView>
   );
 };
@@ -24,4 +26,11 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
   },
   text: { flex: 1, marginHorizontal: "auto", marginTop: 350 },
+  input: {
+    borderWidth: 1,
+    borderColor: "#ccc",
+    borderRadius: 5,
+    padding: 10,
+    marginVertical: 10,
+  },
 });
