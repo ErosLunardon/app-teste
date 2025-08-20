@@ -1,0 +1,6 @@
+{
+  "aliases": {
+    "components": "/src/components/ui_lib",
+    "lib": "/src/lib"
+  }
+}

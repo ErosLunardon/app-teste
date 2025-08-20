@@ -33,7 +33,6 @@ export const Creditos: React.FC<RoutesProps<"creditos">> = () => {
   };
 
   const handleInputChange = (text: string) => {
-    // Remove caracteres não numéricos, exceto ponto e vírgula
     const numericText = text.replace(/[^0-9.,]/g, '').replace(',', '.');
     setInputValue(numericText);
   };
@@ -63,7 +62,6 @@ export const Creditos: React.FC<RoutesProps<"creditos">> = () => {
         </TouchableOpacity>
       </View>
 
-      {/* Modal */}
       <Modal
         animationType="slide"
         transparent={true}
